@@ -1,0 +1,70 @@
+$discord-blurple: #5865F2;
+$discord-green: #57F287;
+$discord-yellow: #FEE75C;
+$discord-fuschia: #EB459E;
+$discord-red: #ED4245;
+$discord-white: #FFFFFF;
+$discord-black: #23272A;
+
+@import "~@mrgoodbytes8667/style-brands/css/brand";
+
+$colors: (
+        blurple: $discord-blurple,
+        green: $discord-green,
+        yellow: $discord-yellow,
+        fuschia: $discord-fuschia,
+        red: $discord-red,
+        white: $discord-white,
+        black: $discord-black,
+);
+
+$discord-colors-white: blurple, green, fuschia, red, black;
+$discord-colors-black: yellow, white;
+
+.btn-discord {
+  @include btn($discord-blurple, $discord-white);
+}
+
+.btn-discord:hover {
+  @include btn-hover($discord-blurple, $discord-white);
+}
+
+.bg-blurple {
+  @include bg($discord-blurple);
+}
+
+@each $c in $discord-colors-white {
+  .btn-discord-#{$c} {
+    @include btn(map-get($colors, $c), $discord-white);
+  }
+
+  .btn-discord-#{$c}:hover {
+    @include btn-hover(map-get($colors, $c), $discord-white);
+  }
+
+  .bg-discord-#{$c} {
+    @include bg(map-get($colors, $c));
+  }
+
+  .text-discord-#{$c} {
+    @include text(map-get($colors, $c));
+  }
+}
+
+@each $c in $discord-colors-black {
+  .btn-discord-#{$c} {
+    @include btn(map-get($colors, $c), $discord-black);
+  }
+
+  .btn-discord-#{$c}:hover {
+    @include btn-hover(map-get($colors, $c), $discord-black);
+  }
+
+  .bg-discord-#{$c} {
+    @include bg(map-get($colors, $c));
+  }
+
+  .text-discord-#{$c} {
+    @include text(map-get($colors, $c));
+  }
+}
