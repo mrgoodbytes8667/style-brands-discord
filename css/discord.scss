@@ -33,6 +33,10 @@ $discord-colors-black: yellow, white;
   @include bg($discord-blurple);
 }
 
+.border-discord, .border-blurple {
+  @include border($discord-blurple);
+}
+
 @each $c in $discord-colors-white {
   .btn-discord-#{$c} {
     @include btn(map-get($colors, $c), $discord-white);
@@ -48,6 +52,18 @@ $discord-colors-black: yellow, white;
 
   .text-discord-#{$c} {
     @include text(map-get($colors, $c));
+  }
+
+  .link-discord-#{$c} > a {
+    @include link(map-get($colors, $c));
+  }
+
+  .link-discord-#{$c}:hover > a {
+    @include link-hover(map-get($colors, $c));
+  }
+
+  .border-#{$c} {
+    @include border(map-get($colors, $c));
   }
 }
 
@@ -66,5 +82,17 @@ $discord-colors-black: yellow, white;
 
   .text-discord-#{$c} {
     @include text(map-get($colors, $c));
+  }
+
+  .link-discord-#{$c} > a {
+    @include link(map-get($colors, $c));
+  }
+
+  .link-discord-#{$c}:hover > a {
+    @include link-hover(map-get($colors, $c));
+  }
+
+  .border-#{$c} {
+    @include border(map-get($colors, $c));
   }
 }
